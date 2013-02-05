@@ -72,7 +72,7 @@ class Session implements StorageInterface
      * @return array|bool
      */
     public function get($type)
-    {
+    {   
         if ($type != 'request_token' && $type != 'access_token') {
             throw new \Dropbox\Exception("Expected a type of either 'request_token' or 'access_token', got '$type'");
         } else {
@@ -145,7 +145,7 @@ class Session implements StorageInterface
         if ($this->encrypter instanceof Encrypter) {
             $token = $this->encrypter->decrypt($token);
         }
-        
+
         // Return the unserialized token
         return @unserialize($token);
     }
