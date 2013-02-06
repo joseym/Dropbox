@@ -95,6 +95,10 @@ class Manual extends Session
         return $this->encrypt($this->get('access_token'));
     }
 
+    public function encrypt($object){
+        return $this->encrypt($object);
+    }
+
     public function decrypt($token){
         if(is_object($token)) return $token;
         // Decrypt the token if there is an Encrypter instance
